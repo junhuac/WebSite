@@ -1,0 +1,987 @@
+@import "bootstrap.min.css";
+@import "font-awesome.min.css";
+
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent
+}
+
+body {
+  line-height: 1
+}
+
+#particles-js canvas {
+  position: absolute!important;
+  top: 0px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+
+nav ul {
+  list-style: none
+}
+
+blockquote, q {
+  quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold
+}
+
+del {
+  text-decoration: line-through
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0
+}
+
+input, select {
+  vertical-align: middle
+}
+
+li {
+  list-style: none
+}
+
+a:hover, a:active, a:visited {
+  text-decoration: none
+}
+
+/* ---------------- Fonts ---------------- */
+@font-face {
+  font-family: magistralregular;
+  font-weight: 400;
+  font-style: normal;
+  src: url(../fonts/magistral-webfont.eot);
+  src: url(../fonts/magistral-webfont.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/magistral-webfont.woff2) format('woff2'),
+  url(../fonts/magistral-webfont.woff) format('woff'),
+  url(../fonts/magistral-webfont.ttf) format('truetype'),
+  url(../fonts/magistral-webfont.svg#magistralregular) format('svg')
+}
+
+@font-face {
+  font-family: magistralbold;
+  font-weight: 400;
+  font-style: normal;
+  src: url(../fonts/magistral_bold-webfont.eot);
+  src: url(../fons/magistral_bold-webfont.eot?#iefix) format('embedded-opentype'),
+  url(../fonts/magistral_bold-webfont.woff2) format('woff2'),
+  url(../fonts/magistral_bold-webfont.woff) format('woff'),
+  url(../fonts/magistral_bold-webfont.ttf) format('truetype'),
+  url(../fonts/magistral_bold-webfont.svg#magistralbold) format('svg')
+}
+
+.hTitle, h1, h2, h3, h4 {
+  font-family: magistralbold, sans-serif !important;
+}
+
+#countdown, nav.topNav, .clockSide .body .link a, text, .cSitem h3, .home4row_ico .col_box, .homeClockBox .logoBox h1 {
+  font-family: magistralregular !important;
+}
+
+/* ---------------- Border Radius ---------------- */
+.progressHolder {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.clockSide .body .link a, #countdown span.num {
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.homeClockBox, .clockSide .body, .cSitem {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.sNetHome a, .ul4col_item span.num {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*------------------ Transition ------------------*/
+.cSitem {
+  -webkit-transition: 0.4s all linear;
+  -moz-transition: 0.4s all linear;
+  -o-transition: 0.4s all linear;
+  transition: 0.4s all linear;
+}
+
+a, a:after, .btn {
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+}
+
+/* ---------------- base ---------------- */
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font: normal 85% Arial, Helvetica, sans-serif;
+}
+
+h2.hTitle {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+h3.hTitle {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+ol.olList {
+  margin: 15px 0 15px 0;
+  padding-left: 5px;
+}
+
+ol.olList li {
+  list-style: inside decimal;
+  padding: 3px 0;
+}
+
+.column_2_row {
+  column-count: 2;
+  column-gap: 40px;
+}
+
+/* ---------------- Header ---------------- */
+section.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  height: 70px;
+  border-top: 3px solid #e67e22;
+  z-index: 9;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  float: left;
+  background-image: url(../img/logo.png);
+  width: 170px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+nav.topNav {
+  float: right;
+  display: flex;
+}
+
+nav.topNav a {
+  line-height: 70px;
+  padding: 0 15px;
+  font-size: 15px;
+  color: #444444;
+}
+
+nav.topNav a:hover {
+  color: #37ba67;
+}
+
+.aboutRow {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+}
+
+.aboutRow .txt {
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.aboutRow .video {
+  background: #f5f5f5;
+  height: 350px;
+}
+
+/* ---------------- particles.js container ---------------- */
+#particles-js {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #545454;
+  background-image: url('../img/banner2.jpg');
+  background-size: cover;
+  background-position: 50% 70px;
+  background-repeat: no-repeat;
+
+  /*background: #38b766;
+  background: -moz-radial-gradient(center, ellipse cover, #38b766 0%, #309b55 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #38b766 0%,#309b55 100%);
+  background: radial-gradient(ellipse at center, #38b766 0%,#309b55 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38b766', endColorstr='#309b55',GradientType=1 );*/
+
+}
+
+#particles-js canvas {
+  display: block;
+  vertical-align: bottom;
+  background-image: url('assets/img/pattern-1.png');
+}
+
+/* ---------------- Home First Box ---------------- */
+.homeClockBox {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 12% 0 0 -450px;
+  width: 900px;
+}
+
+#countdown {
+  display: flex;
+}
+
+#countdown div {
+  text-align: center;
+  padding: 5px;
+  width: 25%;
+}
+
+#countdown div span {
+  display: block;
+}
+
+#countdown div span.num {
+  font-size: 24px;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  margin-bottom: 4px;
+  -webkit-box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+#countdown div span.desc {
+  font-weight: 100;
+  color: #797979;
+}
+
+.homeClockBox {
+  display: flex;
+}
+
+.homeClockBox .clockSide {
+  width: 33.33%;
+}
+
+.homeClockBox .clockSide .body {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.homeClockBox .clockSide h3 {
+  text-align: center;
+  color: #e67e22;
+  font-size: 18px;
+}
+
+.progressBox {
+  padding: 10px 0;
+}
+
+.progressBox .desc {
+  display: flex;
+  padding: 6px;
+}
+
+.progressBox .desc span {
+  flex-grow: 1;
+}
+
+.progressBox .desc span.num {
+  text-align: right;
+}
+
+.progressHolder {
+  background: #fff;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.progressHolder .item {
+  height: 10px;
+  background: #ccc;
+}
+
+.progressHolder .item div {
+  height: 10px;
+  background: #e67e22;
+}
+
+.priceBox {
+  display: flex;
+  padding: 5px;
+}
+
+.priceBox .item {
+  flex-grow: 1;
+}
+
+.priceBox .item span {
+  display: block;
+  font-size: 15px;
+}
+
+.priceBox .item span.tt {
+  color: #e67e22;
+  padding-bottom: 6px;
+}
+
+.sNetHome {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.sNetHome a {
+  width: 30px;
+  height: 30px;
+  background: #969696;
+  margin: 0 3px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.sNetHome a:hover {
+  background: #e67e22;
+}
+
+.homeClockBox .regBox {
+  width: 33.33%;
+  padding-right: 50px;
+  text-align: center;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.homeClockBox .regBox h2 {
+  font-size: 20px;
+  padding: 6px 0 15px 0;
+}
+
+.homeClockBox .regBox h3 {
+  font-size: 24px;
+}
+
+.homeClockBox .regBox h4 {
+  font-size: 20px;
+}
+
+.homeClockBox .regBox .link {
+  display: flex;
+  padding: 30px 10px 0 10px
+}
+
+.homeClockBox .regBox .link a {
+  width: 46%;
+  margin: 2%;
+  background: #fff;
+  padding: 10px 0;
+}
+
+.homeClockBox .logoBox {
+  width: 33.33%;
+  padding-right: 50px;
+}
+
+.homeClockBox .logoBox .logoItem {
+  margin: 0 auto;
+  display: block;
+  width: 140px;
+  height: 140px;
+  -webkit-animation: spin 5s linear infinite;
+  -moz-animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+.homeClockBox .logoBox h1 {
+  text-align: center;
+  font-size: 36px;
+  padding: 6px;
+  color: #fff;
+}
+
+.homeClockBox .logoBox a {
+  display: block;
+  padding: 10px 5px;
+  margin: 0 auto;
+  width: 120px;
+  background: #e67e22;
+  color: #fff;
+  text-align: center;
+}
+
+.home4row_ico {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  padding: 20px 0;
+}
+
+.home4row_ico .col_box {
+  display: flex;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.home4row_ico .col_box .item {
+  width: 25%;
+  padding: 15px;
+}
+
+.home4row_ico .col_box .item a {
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.home4row_ico .col_box .item figure {
+  width: 60px;
+  margin: 0 auto 6px auto;
+}
+
+/* ---------------- section ---------------- */
+.howItwork {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.howItwork h2.hTitle {
+  text-align: center;
+}
+
+.howItwork .img-responsive {
+  margin: 0 auto;
+}
+
+.howItwork .txt {
+  padding: 10px 20px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ul6col_item {
+  display: flex;
+  margin: 40px 0;
+}
+
+.ul6col_item li {
+  width: 20%;
+  padding: 15px;
+  position: relative;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.ul6col_item li:after {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #37ba67;
+  color: #fff;
+  content: "";
+  top: 0px;
+  left: 15px;
+}
+
+.ul6col_item li:before {
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 1px;
+  background: #37ba67;
+  color: #fff;
+  content: "";
+  top: 5px;
+  left: 15px;
+}
+
+.ul6col_item span.num {
+  position: absolute;
+  left: 15px;
+  top: -25px;
+  font-weight: bold;
+  display: block;
+  font-size: 20px;
+  color: #37ba67;
+}
+
+.ul4col_item {
+  display: flex;
+  margin: 40px 0;
+}
+
+.ul4col_item li {
+  width: calc(25% - 30px);
+  margin: 70px 15px 15px 15px;
+  padding: 15px;
+  position: relative;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.ul4col_item li:before {
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 1px;
+  background: #d4d4d4;
+  color: #fff;
+  content: "";
+  top: -28px;
+  left: 15px;
+}
+
+.ul4col_item span.num {
+  position: absolute;
+  left: 50%;
+  top: -60px;
+  width: 60px;
+  margin-left: -30px;
+  line-height: 60px;
+  height: 60px;
+  background: #fff;
+  font-weight: bold;
+  display: block;
+  font-size: 20px;
+  color: #e67e22;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.crowdSaleRow {
+  padding: 80px 0;
+  background-color: #373737;
+  background-image: url(../img/pattern-1.png);
+}
+
+.crowdSaleRow h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.crowdSaleBox {
+  display: flex;
+}
+
+.cSitem {
+  padding: 10px;
+  border: 1px solid #777;
+  width: calc(20% - 14px);
+  margin: 0 7px;
+  text-align: center;
+  color: #fff;
+}
+
+.cSitem:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.cSitem h3 {
+  font-size: 22px;
+  margin: 15px 0;
+  color: #fff;
+  position: relative;
+}
+
+.cSitem h3:after {
+  background: #e67e22;
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 3px;
+  bottom: -7px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+.cSitem p {
+  font-weight: 100;
+  font-size: 12px;
+  color: #929292;
+}
+
+.profitRow {
+  padding: 80px 0 10px 0;
+}
+
+.profitRow h2 {
+  text-align: center;
+}
+
+.profitRow .txt {
+  padding: 0 30px 30px 30px;
+  font-size: 24px;
+  color: #888;
+}
+
+.profitRow .txt strong {
+  color: #000;
+}
+
+.silverRow {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.silverRow h2 {
+  text-align: center;
+}
+
+.silverRow .txt {
+  padding: 30px;
+}
+
+.silverRow .img-responsive {
+  margin: 0 auto;
+}
+
+.allocationRow {
+  padding: 80px 0;
+}
+
+.allocationRow h2 {
+  text-align: center;
+}
+
+.allocationRow .bodyTxt {
+  padding-top: 20px;
+}
+
+.allocationRow .item {
+  padding-bottom: 30px;
+  text-align: justify;
+}
+
+.allocationRow .item h3 {
+  font-size: 18px;
+}
+
+.allocationRow .item div {
+  font-size: 15px;
+}
+
+.Funding_Allo_Row {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.Funding_Allo_Row h2 {
+  text-align: center;
+}
+
+.Funding_Allo_Row .bodyTxt {
+  font-size: 15px;
+}
+
+.site_footer {
+  padding: 100px 0;
+  background: #eeeeee;
+  text-align: center;
+}
+
+.sNetwork {
+  padding-bottom: 10px;
+}
+
+.sNetwork a {
+  font-size: 30px;
+  color: #e67e22;
+  padding: 0 10px;
+}
+
+.sNetwork a:hover {
+  color: #222;
+}
+
+@media only screen and (max-width: 600px) {
+  #about {
+    margin-top: 1400px !important;
+  }
+
+  .homeClockBox {
+    display: list-item !important;
+    position: relative !important;
+    margin: 0px !important;
+    width: 100% !important;
+    left: 0px !important;
+    padding-top: 100px !important;
+  }
+
+  .regBox {
+    width: 100% !important;
+    margin-top:400px !important;
+    color: gray!important;
+  }
+
+  .clockSide {
+    width: 100% !important;
+    margin-top: 50px !important;
+  }
+
+  .homeClockBox .logoBox {
+    width: 100% !important;
+    padding-right: 0px !important;
+  }
+
+  .homeClockBox .regBox {
+    width: 100% !important;
+    padding-right: 0px !important;
+  }
+
+  .ul6col_item {
+    display: list-item !important;
+    list-style: none;
+  }
+
+  .ul6col_item li {
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .ul4col_item {
+    display: list-item !important;
+    list-style: none;
+  }
+
+  .ul4col_item li {
+    width: 100% !important;
+    margin-top: 60px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .crowdSaleBox {
+    display: list-item !important;
+    list-style: none;
+  }
+
+  .cSitem {
+    width: 100% !important;
+    margin-top: 10px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .video {
+    background-color: inherit !important;
+  }
+
+  .home4row_ico .col_box {
+    display: list-item;
+    width: 100%;
+  }
+
+  .home4row_ico .col_box .item {
+    width: 100% !important;
+    background-color: black;
+  }
+
+  .home4row_ico {
+    top: 1400px;
+    background: none !important;
+  }
+
+  #particles-js {
+    height: 100vh;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 600px) {
+
+  #about {
+    margin-top: 1300px !important;
+  }
+
+  .homeClockBox {
+    display: list-item !important;
+    position: relative !important;
+    margin: 0px !important;
+    width: 100% !important;
+    left: 0px !important;
+    padding-top: 100px !important;
+  }
+
+  .regBox {
+    width: 50% !important;
+    float: left !important;
+    margin-top: 400px !important;
+    color: gray!important;
+  }
+
+  .clockSide {
+    width: 50% !important;
+    float: right !important;
+    margin-top: 400px !important;
+  }
+
+  .homeClockBox .logoBox {
+    width: 100% !important;
+    padding-right: 0px !important;
+  }
+
+  .homeClockBox .regBox {
+    width: 50% !important;
+    padding-right: 0px !important;
+  }
+
+  .ul6col_item {
+    display: list-item !important;
+    list-style: none;
+  }
+
+  .ul6col_item li {
+    float: left;
+    width: 50% !important;
+    margin-top: 10px !important;
+    height: 140px;
+  }
+
+  .ul4col_item {
+    display: list-item !important;
+    list-style: none;
+  }
+
+  .ul4col_item li {
+    width: 50% !important;
+    float: left;
+    margin-top: 60px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 120px;
+  }
+
+  .crowdSaleBox {
+    display: list-item !important;
+    list-style: none;
+  }
+
+  .cSitem {
+    width: 50% !important;
+    float: left;
+    margin-top: 10px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .video {
+    background-color: inherit !important;
+  }
+
+  .home4row_ico .col_box {
+    display: list-item;
+    width: 100%;
+  }
+
+  .home4row_ico .col_box .item {
+    width: 50% !important;
+    float: left;
+    background-color: black;
+  }
+
+  .home4row_ico {
+    top: 1200px;
+    background: none !important;
+  }
+
+  #particles-js {
+    height: 80vh;
+  }
+
+}
+
+/**/
