@@ -19,7 +19,7 @@ body {
 }
 
 #particles-js canvas {
-  position: absolute!important;
+  position: absolute !important;
   top: 0px;
 }
 
@@ -119,8 +119,12 @@ a:hover, a:active, a:visited {
   font-family: magistralbold, sans-serif !important;
 }
 
-#countdown, nav.topNav, .clockSide .body .link a, text, .cSitem h3, .home4row_ico .col_box, .homeClockBox .logoBox h1 {
+#countdown, nav.topNav, .clockSide .link a, text, .cSitem h3, .home4row_ico .col_box, .homeClockBox .logoBox h1 {
   font-family: magistralregular !important;
+}
+
+.body h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /* ---------------- Border Radius ---------------- */
@@ -273,7 +277,15 @@ nav.topNav a:hover {
   background: -webkit-radial-gradient(center, ellipse cover, #38b766 0%,#309b55 100%);
   background: radial-gradient(ellipse at center, #38b766 0%,#309b55 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38b766', endColorstr='#309b55',GradientType=1 );*/
+}
 
+.layer {
+  background-color: rgba(61, 168, 98, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #particles-js canvas {
@@ -285,27 +297,28 @@ nav.topNav a:hover {
 /* ---------------- Home First Box ---------------- */
 .homeClockBox {
   position: absolute;
-  left: 50%;
+  left: 45%;
   top: 0;
-  margin: 12% 0 0 -450px;
-  width: 900px;
+  margin: 10% 0 0 -450px;
+  width: 1000px;
+  z-index: 8;
 }
 
 #countdown {
   display: flex;
 }
 
-#countdown div {
+#countdown .countdownItem {
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   width: 25%;
 }
 
-#countdown div span {
+#countdown .countdownItem span {
   display: block;
 }
 
-#countdown div span.num {
+#countdown .countdownItem span.num {
   font-size: 24px;
   font-weight: bold;
   height: 40px;
@@ -317,9 +330,16 @@ nav.topNav a:hover {
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-#countdown div span.desc {
+#countdown .countdownItem span.desc {
   font-weight: 100;
   color: #797979;
+}
+
+.Separator {
+  font-size: 24px;
+  font-weight: bold;
+  height: 40px;
+  padding-top: 8px;
 }
 
 .homeClockBox {
@@ -327,12 +347,12 @@ nav.topNav a:hover {
 }
 
 .homeClockBox .clockSide {
-  width: 33.33%;
+  width: 40%;
 }
 
 .homeClockBox .clockSide .body {
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  background: #F5F6F5;
 }
 
 .homeClockBox .clockSide h3 {
@@ -373,7 +393,7 @@ nav.topNav a:hover {
 
 .progressHolder .item div {
   height: 10px;
-  background: #e67e22;
+  background: #85CC91;
 }
 
 .priceBox {
@@ -417,7 +437,7 @@ nav.topNav a:hover {
 }
 
 .homeClockBox .regBox {
-  width: 33.33%;
+  width: 30%;
   padding-right: 50px;
   text-align: center;
   color: #fff;
@@ -450,7 +470,7 @@ nav.topNav a:hover {
 }
 
 .homeClockBox .logoBox {
-  width: 33.33%;
+  width: 30%;
   padding-right: 50px;
 }
 
@@ -505,7 +525,7 @@ nav.topNav a:hover {
   background: rgba(0, 0, 0, 0.7);
   position: absolute;
   bottom: 0;
-  padding: 20px 0;
+  z-index: 8;
 }
 
 .home4row_ico .col_box {
@@ -803,8 +823,8 @@ nav.topNav a:hover {
 
   .regBox {
     width: 100% !important;
-    margin-top:400px !important;
-    color: gray!important;
+    margin-top: 400px !important;
+    color: gray !important;
   }
 
   .clockSide {
@@ -900,7 +920,7 @@ nav.topNav a:hover {
     width: 50% !important;
     float: left !important;
     margin-top: 400px !important;
-    color: gray!important;
+    color: gray !important;
   }
 
   .clockSide {

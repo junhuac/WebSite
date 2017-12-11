@@ -62,10 +62,10 @@ function showRemaining() {
     var minutes = Math.floor((distance % _hour) / _minute);
     var seconds = Math.floor((distance % _minute) / _second);
 
-    document.getElementById('countdown').innerHTML = '<div><span class="num">' + days + '</span> <span class="desc">days</span></div>';
-    document.getElementById('countdown').innerHTML += '<div><span class="num">' + hours + '</span> <span class="desc">hrs</span></div>';
-    document.getElementById('countdown').innerHTML += '<div><span class="num">' + minutes + '</span> <span class="desc">mins</span></div>';
-    document.getElementById('countdown').innerHTML += '<div><span class="num">' + seconds + '</span> <span class="desc">secs</span></div>';
+    document.getElementById('countdown').innerHTML = '<div class="countdownItem"> <span class="num">' + days + '</span> <span class="desc">days</span></div> <div class="Separator">:</div>';
+    document.getElementById('countdown').innerHTML += '<div class="countdownItem"><span class="num">' + hours + '</span> <span class="desc">hrs</span></div><div class="Separator">:</div>';
+    document.getElementById('countdown').innerHTML += '<div class="countdownItem"><span class="num">' + minutes + '</span> <span class="desc">mins</span></div><div class="Separator">:</div>';
+    document.getElementById('countdown').innerHTML += '<div class="countdownItem"><span class="num" style="color: green">' + seconds + '</span> <span class="desc">secs</span></div>';
 
 
 }
