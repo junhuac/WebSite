@@ -1,0 +1,162 @@
+<section class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div ngbDropdown class="hidden-lg hidden-md hidden-sm " placement="down-right" style="padding-top:10px">
+          <button class="btn pull-right" id="dropdownBasic1" ngbDropdownToggle>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <div ngbDropdownMenu class="col-lg-12">
+            <a class="dropdown-item inPAgeScrool" href="#particles-js">Home</a>
+            <a class="dropdown-item inPAgeScrool" href="#about">What is TIACOIN?</a>
+            <a class="dropdown-item inPAgeScrool" href="#howitWork">How It Works?</a>
+            <a class="dropdown-item inPAgeScrool" href="#ico_section">ICO</a>
+            <a class="dropdown-item inPAgeScrool" href="#silverBacking">Silver Backing</a>
+            <a class="dropdown-item inPAgeScrool" href="">FAQ</a>
+            <a class="dropdown-item inPAgeScrool" href="#features_section">Features</a>
+          </div>
+        </div>
+        <div class="logo hidden-xs hidden-sm  "></div>
+        <nav class="topNav hidden-xs">
+          <a href="#particles-js" class="inPAgeScrool">Home</a>
+          <a href="#about" class="inPAgeScrool">What is TIACOIN?</a>
+          <a href="#howitWork" class="inPAgeScrool">How It Works?</a>
+          <a href="#ico_section" class="inPAgeScrool">ICO</a>
+          <a href="#silverBacking" class="inPAgeScrool">Silver Backing</a>
+          <a href="" class="inPAgeScrool">FAQ</a>
+          <a href="#features_section" class="inPAgeScrool">Features</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<div>
+  <div class="container-fluid">
+    <div class="row" style="background-color:#171717;padding-bottom:50px">
+      <div class="col-lg-12" style="padding-top:100px">
+        <div class="col-lg-6 col-lg-offset-3 formWrapper"
+             style="padding-top:30px;padding-left: 50px;padding-right: 50px">
+          <form ngForm #SignUp="ngForm" name="SignUp" class="form-horizontal">
+            <div class="col-lg-12">
+              <h5 style="text-align: center;padding-bottom: 30px">
+                SIGNUP
+              </h5>
+            </div>
+            <div class="col-lg-12">
+              <div class="col-lg-6">
+                <div class="form-group " style="padding-right: 20px;padding-bottom: 10px">
+                  <input ngModel maxlength="128" minlength="3" #userName="ngModel" required name="userName" type="text"
+                         class="form-control " id="userName" placeholder="User Name">
+                  <span style="color: darkred" class="help-block m-b-none"
+                        *ngIf="(userName.touched && !userName.valid) ">
+              <span *ngIf="userName.errors.required"> this field is required</span>
+              <span *ngIf="userName.errors.maxlength"> max length is 128 char</span>
+                       <span *ngIf="userName.errors.minlength"> you should enter at least 3 char </span>
+            </span>
+                </div>
+                <div class="form-group" style="padding-right: 20px;padding-bottom: 10px">
+                  <input type="email" ngModel #email="ngModel" required name="email" class="form-control" id="email"
+                         placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                  <span style="color: darkred" class="help-block m-b-none"
+                        *ngIf="(email.touched && !email.valid) ">
+              <span *ngIf="email.errors.required"> this field is required</span>
+                     <span *ngIf="email.errors.pattern"> please enter correct pattern for email</span>
+            </span>
+                </div>
+                <div class="form-group " style="padding-right: 20px;padding-bottom: 10px">
+                  <input required ngModel name="confirmPassword" id="confirmPassword" #confirmPassword="ngModel"
+                         type="password"
+                         class="form-control" placeholder="Confirm Password ">
+                  <span style="color: darkred" class="help-block m-b-none"
+                        *ngIf="(confirmPassword.touched && !confirmPassword.valid) ">
+              <span *ngIf="confirmPassword.errors.required"> this field is required</span>
+            </span>
+                  <span style="color: darkred" *ngIf=" confirmPassword.touched && confirmPassword.value!=password.value"> please inter above email</span>
+
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group " style="padding-left: 20px;padding-bottom: 10px">
+                  <input ngModel #fullName="ngModel" required minlength="3" maxlength="128" name="fullName" type="email"
+                         class="form-control" id="fullName" placeholder="Full Name">
+                  <span style="color: darkred" class="help-block m-b-none"
+                        *ngIf="(fullName.touched && !fullName.valid) ">
+              <span *ngIf="fullName.errors.required"> this field is required</span>
+              <span *ngIf="fullName.errors.maxlength"> max length is 128 char</span>
+                       <span *ngIf="fullName.errors.minlength"> you should enter at least 3 char </span>
+            </span>
+                </div>
+                <div class="form-group " style="padding-left: 20px;padding-bottom: 10px">
+                  <input ngModel #password="ngModel" name="password" required minlength="5" maxlength="20"
+                         type="password" class="form-control" id="password" placeholder="password">
+                  <span style="color: darkred" class="help-block m-b-none"
+                        *ngIf="(password.touched && !password.valid) ">
+              <span *ngIf="password.errors.required"> this field is required</span>
+              <span *ngIf="password.errors.maxlength"> max length is 128 char</span>
+                       <span *ngIf="password.errors.minlength"> you should enter at least 3 char </span>
+            </span>
+                </div>
+                <div class="form-group " style="padding-left: 20px;padding-bottom: 10px">
+                  <input  name="phone" type="tel" id="demo" class="form-control" placeholder="" style="width: 100%">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <h5>
+                REFERRAL INFORMATION
+              </h5>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group ">
+                <label class="control-label col-lg-12" for="referalId" style="text-align: left">Referal Id</label>
+                <div class="col-lg-12">
+                  <input ngModel #referalId="ngModel" required name="referalId" type="text" class="form-control"
+                         id="referalId" placeholder="Referal Id">
+                  <span style="color: darkred" class="help-block m-b-none"
+                        *ngIf="(referalId.touched && !referalId.valid) ">
+              <span *ngIf="referalId.errors.required"> this field is required</span>
+            </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12" style="margin-top: 20px;margin-bottom:20px;text-align: center">
+              <re-captcha language="english" site_key="6LchNjcUAAAAAAhOTFBwuuEG71mMX_tRHiEdto4v"
+                          (captchaResponse)="handleCorrectCaptcha($event)"></re-captcha>
+
+              <!-- <re-captcha language="english"  site_key="6LfO7jkUAAAAALWxzMzjRqUSEBa6E3zHJBTSIM2l" (captchaResponse)="handleCorrectCaptcha($event)"></re-captcha>
+            -->
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group">
+                <div class=" pull-right">
+                  <button (click)="getTell()" type="submit" [disabled]="!SignUp.valid  || !checkCaptcha || confirmPassword.value!=password.value" class="btn btn-info">SIGNUP
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <p>
+                <a [routerLink]="['../login']">Click here</a> to login into your Account
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer class="site_footer">
+  <div class="sNetwork">
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-youtube"></i></a>
+    <a href="#"><i class="fa fa-paper-plane"></i></a>
+    <a href="#"><i class="fa fa-medium"></i></a>
+    <a href="#"><i class="fa fa-btc"></i></a>
+  </div>
+  <div class="copy">
+    Copyright 2016-2017, All rights reserved.
+  </div>
+</footer>
+<div id="countdown" style="display: none"></div>
