@@ -8,6 +8,7 @@ import {RegisterComponent} from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ReCaptchaModule} from 'angular2-recaptcha';
 import {LoginComponent} from './login/login.component';
+import {SendMessagService} from './send-messag.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import {LoginComponent} from './login/login.component';
       {path: 'login', component: LoginComponent}
     ])
   ],
-  providers: [],
+  providers: [SendMessagService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

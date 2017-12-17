@@ -1,5 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
+import {SendMessagService} from '../send-messag.service';
+
+declare var jQuery: any;
+import {Router} from '@angular/router';
+import {NavigationEnd} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +13,19 @@ import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(config: NgbDropdownConfig) {
+  constructor(private  sendMessage: SendMessagService, private router: Router) {
+    this.sendMessage.getMessage().subscribe(message => {
+      console.log(message.text);
+      jQuery(document).ready(function () {
+        let harchi = message.text;
+        var x = document.getElementById(harchi);
+        console.log(x);
+        jQuery(x)[0].click();
+        // setTimeout(function () {
+        //   jQuery(x)[0].click();
+        // }, 100);
+      });
+    });
     let testScript = document.createElement('script');
     testScript.setAttribute('id', 'testScript');
     testScript.setAttribute('src', 'assets/js/particles.min.js');

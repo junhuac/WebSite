@@ -19,13 +19,13 @@
         </div>
         <div class="logo hidden-xs hidden-sm  "></div>
         <nav class="topNav hidden-xs">
-          <a href="#particles-js" class="inPAgeScrool">Home</a>
-          <a href="#about" class="inPAgeScrool">What is TIACOIN?</a>
-          <a href="#howitWork" class="inPAgeScrool">How It Works?</a>
-          <a href="#ico_section" class="inPAgeScrool">ICO</a>
-          <a href="#silverBacking" class="inPAgeScrool">Silver Backing</a>
+          <a id="homeNav" href="#particles-js" class="inPAgeScrool">Home</a>
+          <a id="aboutNav" href="#about" class="inPAgeScrool">What is TIACOIN?</a>
+          <a id="howitWorkNav" href="#howitWork" class="inPAgeScrool">How It Works?</a>
+          <a id="ico_sectionNav" href="#ico_section" class="inPAgeScrool">ICO</a>
+          <a id="silverBackingNav" href="#silverBacking" class="inPAgeScrool">Silver Backing</a>
           <a href="" class="inPAgeScrool">FAQ</a>
-          <a href="#features_section" class="inPAgeScrool">Features</a>
+          <a id="features_sectionNav" href="#features_section" class="inPAgeScrool">Features</a>
         </nav>
       </div>
     </div>
@@ -43,8 +43,8 @@
       <h3>DUAL-BACKED</h3>
       <h4>CRYPTOCURRENCY</h4>
       <div class="link ">
-        <a [routerLink]="['register']" style="color: green">Register</a>
-        <a href="#" style="color: green">White Paper</a>
+        <a  STYLE="color: green" [routerLink]="['register']">Register</a>
+        <a href="#" STYLE="color: green">White Paper</a>
       </div>
     </div>
     <div class="clockSide ">
@@ -64,7 +64,7 @@
           </div>
         </div>
         <div style="width: 100% ; text-align: center; padding-top: 20px;padding-bottom: 20px" >
-          <a class="btn btn-group-lg btn-success text-center" style="border-radius:22.5px; color: white;font-weight: bold">Buy Token</a>
+          <a [routerLink]="['register']" class="btn btn-group-lg btn-success text-center" style="border-radius:22.5px; color: white;font-weight: bold">Buy Token</a>
         </div>
 
         <div class="sNetHome">
@@ -80,42 +80,42 @@
       </div>
     </div>
     <!--<div class="home4row_ico hidden-sm hidden-xs ">-->
-      <!--<div class="col_box">-->
+    <!--<div class="col_box">-->
 
-        <!--<div class="item">-->
-          <!--<a href="#">-->
-            <!--<figure>-->
-              <!--<img src="assets/img/ico/coin-erc20.png" class="img-responsive" alt="">-->
-            <!--</figure>-->
-            <!--ECR20 Token-->
-          <!--</a>-->
-        <!--</div>-->
-        <!--<div class="item">-->
-          <!--<a href="#">-->
-            <!--<figure>-->
-              <!--<img src="assets/img/ico/kvamyeelzfylzyvgqnrm.png" class="img-responsive" alt="">-->
-            <!--</figure>-->
-            <!--PoS Mining Algorithm-->
-          <!--</a>-->
-        <!--</div>-->
-        <!--<div class="item">-->
-          <!--<a href="#">-->
-            <!--<figure>-->
-              <!--<img src="assets/img/ico/blockExplorer.png" class="img-responsive" alt="">-->
-            <!--</figure>-->
-            <!--Block Explorer-->
-          <!--</a>-->
-        <!--</div>-->
-        <!--<div class="item">-->
-          <!--<a href="#">-->
-            <!--<figure>-->
-              <!--<img src="assets/img/ico/github.png" class="img-responsive" alt="">-->
-            <!--</figure>-->
-            <!--SampleCode Github-->
-          <!--</a>-->
-        <!--</div>-->
+    <!--<div class="item">-->
+    <!--<a href="#">-->
+    <!--<figure>-->
+    <!--<img src="assets/img/ico/coin-erc20.png" class="img-responsive" alt="">-->
+    <!--</figure>-->
+    <!--ECR20 Token-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="item">-->
+    <!--<a href="#">-->
+    <!--<figure>-->
+    <!--<img src="assets/img/ico/kvamyeelzfylzyvgqnrm.png" class="img-responsive" alt="">-->
+    <!--</figure>-->
+    <!--PoS Mining Algorithm-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="item">-->
+    <!--<a href="#">-->
+    <!--<figure>-->
+    <!--<img src="assets/img/ico/blockExplorer.png" class="img-responsive" alt="">-->
+    <!--</figure>-->
+    <!--Block Explorer-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="item">-->
+    <!--<a href="#">-->
+    <!--<figure>-->
+    <!--<img src="assets/img/ico/github.png" class="img-responsive" alt="">-->
+    <!--</figure>-->
+    <!--SampleCode Github-->
+    <!--</a>-->
+    <!--</div>-->
 
-      <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
   </div>
   <div class="home4row_ico">
@@ -124,7 +124,7 @@
       <div class="item">
         <a href="#">
           <figure>
-            <img src="assets/img/ico/coin-erc20.png" class="img-responsive" alt="">
+            <img style="height: 50px" src="assets/img/ico/coin-erc20.png" class="img-responsive" alt="">
           </figure>
           ECR20 Token
         </a>
@@ -132,7 +132,7 @@
       <div class="item">
         <a href="#">
           <figure>
-            <img src="assets/img/ico/kvamyeelzfylzyvgqnrm.png" class="img-responsive" alt="">
+            <img style="height: 50px" src="assets/img/ico/kvamyeelzfylzyvgqnrm.png" class="img-responsive" alt="">
           </figure>
           PoS Mining Algorithm
         </a>
@@ -140,7 +140,7 @@
       <div class="item">
         <a href="#">
           <figure>
-            <img src="assets/img/ico/blockExplorer.png" class="img-responsive" alt="">
+            <img style="height: 50px" src="assets/img/ico/blockExplorer.png" class="img-responsive" alt="">
           </figure>
           Block Explorer
         </a>
@@ -148,7 +148,7 @@
       <div class="item">
         <a href="#">
           <figure>
-            <img src="assets/img/ico/github.png" class="img-responsive" alt="">
+            <img style="height: 50px" src="assets/img/ico/github.png" class="img-responsive" alt="">
           </figure>
           SampleCode Github
         </a>
@@ -159,7 +159,6 @@
   <div class="layer">
   </div>
 </section>
-
 
 <section class="aboutRow" id="about">
   <div class="container">
@@ -451,8 +450,14 @@
     <a href="#"><i class="fa fa-paper-plane"></i></a>
     <a href="#"><i class="fa fa-medium"></i></a>
     <a href="#"><i class="fa fa-btc"></i></a>
+    <a href="#"><i class="fa fa-slack" aria-hidden="true"></i></a>
   </div>
   <div class="copy">
     Copyright 2016-2017, All rights reserved.
   </div>
 </footer>
+
+
+
+<!-- Modal -->
+
