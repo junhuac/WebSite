@@ -9,13 +9,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ReCaptchaModule} from 'angular2-recaptcha';
 import {LoginComponent} from './login/login.component';
 import {SendMessagService} from './send-messag.service';
+import { BaseComponent } from './base/base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    BaseComponent
   ],
   imports: [
     ReCaptchaModule,
@@ -24,9 +26,12 @@ import {SendMessagService} from './send-messag.service';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '', component: HomeComponent},
-      {path: 'register', component: RegisterComponent},
-      {path: 'login', component: LoginComponent}
+      // {path: '', component: HomeComponent},
+      {path: '', component: BaseComponent, children: [
+        {path: '', component: HomeComponent, pathMatch: 'full'},
+        {path: 'register', component: RegisterComponent},
+        {path: 'login', component: LoginComponent}
+      ]}
     ])
   ],
   providers: [SendMessagService],

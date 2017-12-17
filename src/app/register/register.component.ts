@@ -29,11 +29,6 @@ export class RegisterComponent implements OnInit {
     console.log(tel);
   }
 
-  routHome(e) {
-    console.log(e + 'send');
-    this.sendMessage.sendMessage(e);
-    this.router.navigateByUrl('');
-  }
   handleCorrectCaptcha(event) {
     this.checkCaptcha = true;
   }

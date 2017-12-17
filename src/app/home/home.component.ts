@@ -14,18 +14,6 @@ import {NavigationEnd} from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(private  sendMessage: SendMessagService, private router: Router) {
-    this.sendMessage.getMessage().subscribe(message => {
-      console.log(message.text);
-      jQuery(document).ready(function () {
-        let harchi = message.text;
-        var x = document.getElementById(harchi);
-        console.log(x);
-        jQuery(x)[0].click();
-        // setTimeout(function () {
-        //   jQuery(x)[0].click();
-        // }, 100);
-      });
-    });
     let testScript = document.createElement('script');
     testScript.setAttribute('id', 'testScript');
     testScript.setAttribute('src', 'assets/js/particles.min.js');

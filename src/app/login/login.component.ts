@@ -18,9 +18,4 @@ export class LoginComponent implements OnInit {
   handleCorrectCaptcha(event) {
     this.checkCaptcha = true;
   }
-  routHome(e) {
-    console.log(e);
-    this.sendMessage.sendMessage(e);
-    this.router.navigateByUrl('');
-  }
 }
