@@ -79,7 +79,7 @@
               </div>
               <div class="col-lg-12">
                 <div class="form-group " style="padding-bottom: 10px">
-                  <input  name="phone" type="tel" id="demo" class="form-control" placeholder="" style="width: 100%">
+                  <input  name="phone" type="tel" id="demo"  class="form-control" placeholder="" style="width: 100%">
                 </div>
               </div>
             </div>
@@ -111,7 +111,10 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <div class=" pull-right">
-                  <button (click)="getTell()" type="submit" [disabled]="!SignUp.valid  || !checkCaptcha || confirmPassword.value!=password.value" class="btn btn-info">SIGNUP
+                  <button  type="submit" [disabled]="!SignUp.valid  || !checkCaptcha || confirmPassword.value!=password.value" class="btn btn-info">SIGNUP
+                  </button>
+                  <button (click)="getTell()">
+                    dard
                   </button>
                 </div>
               </div>

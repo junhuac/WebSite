@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import {SendMessagService} from '../send-messag.service';
 import {Router} from '@angular/router';
 @Component({
   selector: 'app-login',
@@ -9,7 +8,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   checkCaptcha = false;
-  constructor(private  sendMessage: SendMessagService, private router: Router) {
+  constructor( private router: Router) {
 
   }
 

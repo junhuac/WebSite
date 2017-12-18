@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {SendMessagService} from '../send-messag.service';
 import {Router} from '@angular/router';
 declare var jQuery: any;
 
@@ -10,8 +9,7 @@ declare var jQuery: any;
 })
 export class RegisterComponent implements OnInit {
   checkCaptcha = false;
-
-  constructor(private  sendMessage: SendMessagService, private router: Router) {
+  constructor( private router: Router) {
     let testScript = document.createElement('script');
     testScript.setAttribute('id', 'testScript');
     testScript.setAttribute('src', 'assets/js/intlTelInput.min.js');
@@ -24,9 +22,14 @@ export class RegisterComponent implements OnInit {
   }
 
   getTell() {
-    const tel = jQuery("#demo").intlTelInput("getNumber");
-    alert(tel);
-    console.log(tel);
+    jQuery(document).ready(function () {
+      var countryData = jQuery("#demo").intlTelInput("getSelectedCountryData");
+      var val = jQuery('#demo').val();
+      console.log(val);
+      console.log(countryData);
+
+    });
+
   }
 
   handleCorrectCaptcha(event) {
