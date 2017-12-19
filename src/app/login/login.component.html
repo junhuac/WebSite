@@ -1,34 +1,35 @@
-
 <div>
   <div class="container-fluid">
     <div class="row" style="background-color:#171717;padding-bottom:50px">
       <div class="col-lg-12" style="padding-top:100px">
         <div class="col-lg-4 col-lg-offset-4 formWrapper"
              style="padding-top:30px;padding-left: 50px;padding-right: 50px;padding-bottom: 10px">
-          <form ngForm #login="ngForm" name="login" class="form-horizontal">
+          <form ngForm #loginForm="ngForm" name="login" class="form-horizontal" (ngSubmit)="login(loginForm)">
             <div class="col-lg-12">
               <h5 style="text-align: center;padding-bottom: 30px">
                 login
               </h5>
             </div>
             <div class="col-lg-12">
-              <div class="form-group " style="margin-bottom:10px">
+              <div class="form-group" style="padding-bottom: 10px">
                 <div class="input-group">
-                  <span class="input-group-addon col-lg-1" ><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                  <input ngModel maxlength="128" minlength="3" #userName="ngModel" required name="userName" type="text"
-                         class="form-control col-lg-11 " id="userName" placeholder="User Name">
+                  <span class="input-group-addon" style="width: 40px"><i class="fa fa-envelope-o"
+                                                                         aria-hidden="true"></i></span>
+                  <input type="email" ngModel #email="ngModel" required name="email" class=" form-control"
+                         placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
                 </div>
                 <span style="color: darkred" class="help-block m-b-none"
-                      *ngIf="(userName.touched && !userName.valid) ">
-              <span *ngIf="userName.errors.required"> this field is required</span>
-              <span *ngIf="userName.errors.maxlength"> max length is 128 char</span>
-                       <span *ngIf="userName.errors.minlength"> you should enter at least 3 char </span>
+                      *ngIf="(email.touched && !email.valid) ">
+              <span *ngIf="email.errors.required"> this field is required</span>
+                  <span *ngIf="email.errors.pattern"> please enter correct pattern for email</span>
             </span>
               </div>
               <div class="form-group" style="padding-bottom: 10px">
                 <div class="input-group">
-                  <span class="input-group-addon col-lg-1"><i class="fa fa-key" aria-hidden="true"></i></span>
-                  <input type="password" ngModel #password="ngModel" required name="password" class=" col-lg-11"
+                  <span class="input-group-addon " style="width: 40px"><i class="fa fa-key"
+                                                                          aria-hidden="true"></i></span>
+                  <input type="password" ngModel #password="ngModel" required name="password" class="form-control"
                          placeholder="Password">
                 </div>
                 <span style="color: darkred" class="help-block m-b-none"
@@ -49,15 +50,15 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <div class="col-lg-4 col-lg-offset-4">
-                  <button type="submit" [disabled]="!login.valid  || !checkCaptcha" class="btn btn-info">SIGNUP
+                  <button type="submit" [disabled]="!loginForm.valid  || !checkCaptcha" class="btn btn-info">SIGNUP
                   </button>
                 </div>
               </div>
             </div>
             <div class="col-lg-12" style="text-align: center">
               <p style="margin-bottom: 1px;"><a [routerLink]="['../register']">Create Account</a></p>
-              <p style="margin-bottom: 1px;"><a >Forgot Password?</a></p>
-              <p style="margin-bottom: 1px;"><a >Resend Activation Link</a></p>
+              <p style="margin-bottom: 1px;"><a>Forgot Password?</a></p>
+              <p style="margin-bottom: 1px;"><a>Resend Activation Link</a></p>
             </div>
           </form>
         </div>

@@ -5,14 +5,14 @@
       <div class="col-lg-12" style="padding-top:100px">
         <div class="col-lg-6 col-lg-offset-3 formWrapper"
              style="padding-top:30px;padding-left: 50px;padding-right: 50px">
-          <form ngForm #SignUp="ngForm" name="SignUp" class="form-horizontal">
+          <form ngForm #SignUp="ngForm" name="SignUp" (ngSubmit)="register(SignUp)" class="form-horizontal registerForm">
             <div class="col-lg-12">
               <h5 style="text-align: center;padding-bottom: 30px">
                 SIGNUP
               </h5>
             </div>
             <div class="col-lg-12">
-              <div class="col-lg-6">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group " style="padding-right: 20px;padding-bottom: 10px">
                   <input ngModel maxlength="128" minlength="3" #firstName="ngModel" required name="firstName" type="text"
                          class="form-control " id="firstName" placeholder="First Name">
@@ -44,7 +44,7 @@
                 </div>
 
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group " style="padding-left: 20px;padding-bottom: 10px">
                   <input ngModel #lastName="ngModel" required minlength="3" maxlength="128" name="lastName" type="email"
                          class="form-control" id="lastName" placeholder="Last Name">
@@ -73,13 +73,21 @@
                         *ngIf="(confirmPassword.touched && !confirmPassword.valid) ">
               <span *ngIf="confirmPassword.errors.required"> this field is required</span>
             </span>
-                  <span style="color: darkred" *ngIf=" confirmPassword.touched && confirmPassword.value!=password.value"> please inter above email</span>
+                  <span style="color: darkred" *ngIf=" confirmPassword.touched && confirmPassword.value!=password.value">Password does not match the confirm password. </span>
 
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="form-group " style="padding-bottom: 10px">
-                  <input  name="phone" type="tel" id="demo"  class="form-control" placeholder="" style="width: 100%">
+                  <input  (change)="myFunction()"  type="number" id="demo" name="phone" ngModel #phone="ngModel"  class="form-control" placeholder="" style="width: 100%">
+                  <span style="color: darkred" class="help-block m-b-none"
+                        *ngIf="(phone.touched && !this.tell ) ">
+                    this field is required
+                  </span>
+                  <span style="color: darkred" class="help-block m-b-none"
+                        *ngIf="(phone.touched && this.tellLength != 8 ) ">
+                    please enter 8 number
+                  </span>
                 </div>
               </div>
             </div>
@@ -111,11 +119,11 @@
             <div class="col-lg-12">
               <div class="form-group">
                 <div class=" pull-right">
-                  <button  type="submit" [disabled]="!SignUp.valid  || !checkCaptcha || confirmPassword.value!=password.value" class="btn btn-info">SIGNUP
+                  <button  type="submit" [disabled]="!SignUp.valid  || !checkCaptcha || confirmPassword.value!=password.value || this.tellLength != 8" class="btn btn-info">SIGNUP
                   </button>
-                  <button (click)="getTell()">
-                    dard
-                  </button>
+                  <!--<button (click)="getTell()">-->
+                    <!--dard-->
+                  <!--</button>-->
                 </div>
               </div>
             </div>

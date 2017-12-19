@@ -808,6 +808,16 @@ nav.topNav a:hover {
 }
 
 @media only screen and (max-width: 600px) {
+  .registerForm .form-group{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+  }
+  re-captcha div div iframe {
+    width: 200px!important;
+  }
+  re-captcha div{
+    width: 200px!important;
+  }
   #about {
     margin-top: 1400px !important;
   }
