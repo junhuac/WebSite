@@ -214,7 +214,7 @@ section.header {
   top: 0;
   background: #fff;
   height: 70px;
-  border-top: 3px solid #e67e22;
+  border-top:3px solid #37ba67;
   z-index: 9;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -280,7 +280,6 @@ nav.topNav a:hover {
 }
 
 .layer {
-  background-color: rgba(61, 168, 98, 0.6);
   position: absolute;
   top: 0;
   left: 0;
@@ -378,22 +377,20 @@ nav.topNav a:hover {
   text-align: right;
 }
 
-.progressHolder {
-  background: #fff;
-  padding: 10px;
-  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
-}
+.progressHolder {}
 
 .progressHolder .item {
-  height: 10px;
+  height: 18px;
   background: #ccc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  overflow:hidden;
 }
 
 .progressHolder .item div {
-  height: 10px;
-  background: #85CC91;
+  height: 18px;
+  background: #37ba67;
 }
 
 .priceBox {
@@ -415,6 +412,28 @@ nav.topNav a:hover {
   padding-bottom: 6px;
 }
 
+.buyToken_row{ text-align:center; padding:12px 0;}
+.buyToken_row a.btn{ background:#37ba67; color:#fff; padding:10px 50px; font-weight:bold;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+
+background: #00eb00;
+background: -moz-linear-gradient(top, #00eb00 0%, #0ace00 100%);
+background: -webkit-linear-gradient(top, #00eb00 0%,#0ace00 100%);
+background: linear-gradient(to bottom, #00eb00 0%,#0ace00 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00eb00', endColorstr='#0ace00',GradientType=0 );
+
+}
+.buyToken_row a.btn:hover{
+background: #0ace00;
+background: -moz-linear-gradient(top, #0ace00 0%, #00eb00 100%);
+background: -webkit-linear-gradient(top, #0ace00 0%,#00eb00 100%);
+background: linear-gradient(to bottom, #0ace00 0%,#00eb00 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0ace00', endColorstr='#00eb00',GradientType=0 );
+}
+
+
 .sNetHome {
   display: flex;
   padding-top: 20px;
@@ -422,18 +441,19 @@ nav.topNav a:hover {
 }
 
 .sNetHome a {
-  width: 30px;
-  height: 30px;
+  width:46px;
+  height:46px;
   background: #969696;
   margin: 0 3px;
   text-align: center;
-  line-height: 30px;
-  font-size: 15px;
+  line-height:46px;
+  font-size: 25px;
   color: #fff;
 }
 
 .sNetHome a:hover {
-  background: #e67e22;
+  background:#37ba67;
+  color:#fff;
 }
 
 .homeClockBox .regBox {
@@ -550,6 +570,25 @@ nav.topNav a:hover {
   width: 60px;
   margin: 0 auto 6px auto;
 }
+
+/* ---------------- Faq Row ---------------- */
+.faq_row{ padding:80px 0;}
+.faq_row h2{ text-align:center; }
+#accordion .card_item{ margin:6px 0;}
+#accordion .card_item .card-header{ background:#fff; padding:0;}
+#accordion .card_item .card-header a{ display:block; padding:16px 16px; color:#353535; font-weight:100;}
+#accordion .card_item .card-header a span{font-weight:bold; color:#37ba67; }
+#accordion .card_item .card-header a:hover, #accordion .card_item .card-header a:focus{ text-decoration:none; }
+#accordion .card_item .card-block{ padding:20px 35px; }
+
+
+
+.forInvestor_row{ padding:80px 0; background:#fff;}
+.forInvestor_row h2{ text-align:center; margin-bottom:40px;}
+
+.block_ico_Item{ text-align:center; }
+.block_ico_Item h4{ font-size:20px; font-family:"Raleway", Helvetica, Arial, sans-serif !important; margin:30px 0;}
+.block_ico_Item p{ font-size:15px; color:#828282; }
 
 /* ---------------- section ---------------- */
 .howItwork {
@@ -698,7 +737,7 @@ nav.topNav a:hover {
 }
 
 .cSitem h3:after {
-  background: #e67e22;
+  background: #37ba67;
   position: absolute;
   content: "";
   width: 40px;
@@ -789,7 +828,7 @@ nav.topNav a:hover {
 
 .site_footer {
   padding: 100px 0;
-  background: #eeeeee;
+  background: #d6d6d6;
   text-align: center;
 }
 
@@ -799,13 +838,14 @@ nav.topNav a:hover {
 
 .sNetwork a {
   font-size: 30px;
-  color: #e67e22;
+  color: #37ba67;
   padding: 0 10px;
 }
 
 .sNetwork a:hover {
   color: #222;
 }
+
 
 @media only screen and (max-width: 600px) {
   .registerForm .form-group{
